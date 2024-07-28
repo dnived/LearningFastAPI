@@ -2,5 +2,8 @@ __pycache__
 venv
 Notes
 TodoApp/__pycache__
-TodoApp/SQLITEInitalQueries.sqlite3-query
+TodoApp/SQLITEInitialQueries.sqlite3-query
 TodoApp/todos.db
+TodoAppV2/__pycache__
+TodoAppV2/SQLITEInitialQueries.sqlite3-query
+TodoAppV2/todos.db
