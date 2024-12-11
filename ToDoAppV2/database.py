@@ -9,8 +9,13 @@ load_dotenv()
 #database url
 SQLALCHEMY_DATABASE_URL = os.getenv("SQLALCHEMY_DATABASE_URL")
 
+
+
+
+
 #database engine
-engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread":False})
+# engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread":False})
+engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
 # database session => session allows us to configure the parameter for the session it will produce, such as the data engine, autoflush, autocommit and other options
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

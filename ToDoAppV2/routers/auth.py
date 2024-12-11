@@ -59,8 +59,9 @@ def authenticate_user(username, password, db):
     user = db.query(Users).filter(Users.username == username).first()
     if not user:
         return False
-    # if not bcrypt_context.verify(password, user.hashed_Password):
-    if not bcrypt.checkpw(password.encode('utf-8'), user.hashed_Password):
+    # if not bcrypt_context.verify(password, user.hashed_password):
+    print(password)
+    if not bcrypt.checkpw(password.encode('utf-8'), user.hashed_password):
         return False
     return user
 
@@ -100,8 +101,8 @@ def create_user(db:db_dependency, create_user:CreateUserRequest):
         username = create_user.username,
         first_name = create_user.first_name,
         last_name = create_user.last_name,
-        # hashed_Password = bcrypt_context.hash(create_user.password),
-        hashed_Password = bcrypt.hashpw(create_user.password.encode('utf-8'), bcrypt.gensalt()),
+        # hashed_password = bcrypt_context.hash(create_user.password),
+        hashed_password = bcrypt.hashpw(create_user.password.encode('utf-8'), bcrypt.gensalt()),
         role = create_user.role,
         is_active = True
     )

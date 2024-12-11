@@ -19,6 +19,7 @@ class Books():
         self.author = author
         self.rating = rating
 
+
 BOOKS = [
     Books(1, "Learn FastAPI", description="best FastAPI Course", author="Udemy", rating="5"),
     Books(2, "Learn React", description="Nice React Course", author="Youtube", rating="4"),
